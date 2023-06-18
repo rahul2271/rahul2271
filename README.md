@@ -1,9 +1,27 @@
-- 👋 Hi, I’m @rahul2271
-- 👀 I’m interested in Web Development
-- 🌱 I’m currently learning Full Stack Web Development from iNeuron 
-- 📫 You can reach me on instagram as rxhul_chauhan.
-
-<!---
-rahul2271/rahul2271 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(x) {
+    if (x === 0) {
+        return 0; 
+    }
+    
+    let left = 1;
+    let right = x;
+    
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        let sqr = mid * mid;
+        
+        if (sqr === x) {
+            return mid;
+        } else if (sqr < x) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    
+    return right; // Return the floor value of the square root
+};
